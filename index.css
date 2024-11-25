@@ -33,6 +33,7 @@ body.sad-theme {
 }
 
 @keyframes slowTwinkle {
+
   0%,
   100% {
     opacity: 0.1;
@@ -61,6 +62,7 @@ body.sad-theme {
 }
 
 @keyframes twinkle {
+
   0%,
   100% {
     opacity: 0.2;

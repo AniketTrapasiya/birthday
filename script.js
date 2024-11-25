@@ -1,35 +1,32 @@
 const wishes = [
-  "🌟 Dear Shalini... 🌟",
-  "On this special day... ✨",
-  "I want to tell you something from my heart...",
-  "You bring so much joy to everyone around you! 🎉",
-  "Your smile brightens up even the darkest days! 💫",
-  "Your kindness makes this world a better place! 💖",
-  "Happy Birthday! 🎂",
-  "But before we continue...",
-  "I have a special question for you... 🤔"
+  "Bayiiii... ",
+  "Pada hari yang sangat istimewa ini... ",
+  "Saya ingin memberitahukan sesuatu dari hati saya...",
+  "Anda membawa begitu banyak kebahagiaan untuk setiap orang di sekitar Anda! ",
+  "Senyuman Anda mencerahkan bahkan hari-hari yang paling gelap! ",
+  "Kesabaran Anda membuat dunia ini menjadi tempat yang lebih baik! ",
+  "Selamat Ulang Tahun! ",
+  "Namun sebelum kita lanjutkan...",
+  "Saya punya pertanyaan spesial untuk Anda... "
 ];
-const sisterChat = [
-  "Sister? 🤔",
-  "You know what Shalini...",
-  "I have something to confess... 💫",
-  "While sisters are precious...",
-  "I've always felt our bond is different... ✨",
-  "The way we understand each other...",
-  "The way we share everything...",
-  "It feels more like best friends! 💫",
-  "Would you like to be my Best Friend instead? 🌟"
+const gfChat = [
+  "Hafsah, cinta saya untuk Anda tidak terbatas...",
+  "Di mata Anda, saya melihat masa depan saya, saya melihat selamanya...",
+  "Setiap momen dengan Anda adalah hadiah, setiap ciuman adalah mimpi yang terwujud...",
+  "Saya cinta bagaimana kita dapat menjembatani jarak di antara kita hanya dengan sekali pandang, sekali sentuhan, sekali janji yang bisik...",
+  "Saya cinta bagaimana kita dapat membuat satu sama lain merasa dilihat dan didengar, bahkan ketika kita berada di tempat yang sangat jauh...",
+  "Saya cinta Anda lebih dari kata-kata yang dapat saya ucapkan, lebih dari puisi yang dapat saya tuliskan...",
+  "Anda adalah rumah saya, tempat saya berlindung, saya mencintai Anda selamanya...",
 ];
 const bestFriendMessages = [
-  "Yaara teri yaari ko maine toh khuda mana 🌟",
-  "Teri dosti ne mujhe jeena sikhaya hai ✨",
-  "Tere jaisa yaar kaha, kaha aisa yarana 💖",
-  "Dosti ki hai, nibhani to padegi",
-  "Koi dhundta hai kisi ko,",
-  "Koi kisi ka sahara hai 🌟",
-  "You're not just my friend Shalini,",
-  "You're my favorite person to annoy! 😋",
-  "Let's be Best Friends Forever! 🤗"
+  "Moonlight, cinta saya, jantung saya berdetak untuk Anda saja...",
+  "Di pelukan Anda, saya menemukan ketenangan saya, saya menemukan keselamatan saya...",
+  "Setiap momen tanpa Anda adalah seumur hidup, setiap detik adalah keabadian...",
+  "Saya cinta bagaimana kita dapat melewati waktu dan ruang, bagaimana kita dapat bersama-sama walaupun kita berada di tempat yang sangat jauh...",
+  "Saya cinta bagaimana kita dapat membuat satu sama lain merasa utuh, bahkan ketika kita hancur berkeping-keping...",
+  "Saya cinta Anda lebih dari hidup saya sendiri, lebih dari napas saya sendiri...",
+  "Anda adalah segalanya untuk saya, saya mencintai Anda selamanya...",
+  "Maukah Anda menjadi pacar saya, pasangan saya, teman saya seumur hidup?",
 ];
 
 function createStars() {
@@ -62,9 +59,8 @@ function createEmoji() {
         transform: "translateY(0) rotate(0deg)"
       },
       {
-        transform: `translateY(${window.innerHeight + 50}px) rotate(${
-          Math.random() * 360
-        }deg)`
+        transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360
+          }deg)`
       }
     ],
     {
@@ -76,7 +72,7 @@ function createEmoji() {
 }
 
 function stopAllMusic() {
-  const audios = ["bgMusic", "sisterMusic", "bestFriendMusic"];
+  const audios = ["bgMusic", "gfMusic", "bestFriendMusic"];
   audios.forEach((id) => {
     const audio = document.getElementById(id);
     if (audio) {
@@ -101,14 +97,14 @@ async function typeWriter(text) {
   wishesElement.className = "wishes neon-text";
   for (let char of text) {
     wishesElement.innerHTML += char;
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    await new Promise((resolve) => setTimeout(resolve, 70));
   }
   await new Promise((resolve) => setTimeout(resolve, 1000));
 }
 let isMuted = false;
 const muteButton = document.getElementById("muteButton");
 muteButton.addEventListener("click", () => {
-  const audios = ["bgMusic", "sisterMusic", "bestFriendMusic"];
+  const audios = ["bgMusic", "gfMusic", "bestFriendMusic"];
   isMuted = !isMuted;
   audios.forEach((id) => {
     const audio = document.getElementById(id);
@@ -124,12 +120,12 @@ async function makeChoice(choice) {
   const wishesElement = document.getElementById("wishes");
   document.getElementById("choices").style.display = "none";
   stopAllMusic();
-  if (choice === "sister") {
-    document.body.classList.add("sad-theme");
-    const sisterAudio = document.getElementById("sisterMusic");
-    sisterAudio.muted = isMuted;
+  if (choice === "gf") {
+    document.body.classList.remove("sad-theme");
+    const gfAudio = document.getElementById("gfMusic");
+    gfAudio.muted = isMuted;
     try {
-      const playPromise = sisterAudio.play();
+      const playPromise = gfAudio.play();
       if (playPromise !== undefined) {
         playPromise.catch((error) => {
           console.log("Audio play failed:", error);
@@ -138,7 +134,7 @@ async function makeChoice(choice) {
     } catch (err) {
       console.log("Audio play failed:", err);
     }
-    for (let message of sisterChat) {
+    for (let message of gfChat) {
       await typeWriter(message);
     }
     document.getElementById("choices").innerHTML = `
@@ -147,7 +143,7 @@ async function makeChoice(choice) {
     document.getElementById("choices").style.display = "block";
     document.querySelector(".choice-btn").style.opacity = 1;
   } else {
-    document.body.classList.remove("sad-theme");
+    document.body.classList.add("sad-theme");
     const bestFriendAudio = document.getElementById("bestFriendMusic");
     bestFriendAudio.muted = isMuted;
     try {
@@ -167,11 +163,11 @@ async function makeChoice(choice) {
     setTimeout(() => {
       setTimeout(() => {
         window.open(
-          "https://www.instagram.com/direct/t/harshpreet_singh_honey",
+          "https://t.me/@art260301",
           "_blank"
         );
         wishesElement.innerHTML =
-          "Check your Instagram, Shalini! 📱✨<br>💖I am there💖";
+          "Check your Telegram, ratuku! 📱✨<br>💖I am there💖";
       }, 1000);
     }, 2000);
   }
@@ -201,7 +197,7 @@ document.getElementById("startBtn").addEventListener("click", async () => {
   });
 });
 document.addEventListener("click", async function initAudio() {
-  const audios = ["bgMusic", "sisterMusic", "bestFriendMusic"];
+  const audios = ["bgMusic", "gfMusic", "bestFriendMusic"];
   for (let id of audios) {
     const audio = document.getElementById(id);
     try {
