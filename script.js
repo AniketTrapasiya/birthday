@@ -110,10 +110,20 @@ function stopAllMusic() {
 }
 
 function playAudio(audioId) {
+  console.log("Playing audio:", audioId);
+
   const audio = document.getElementById(audioId);
   if (audio) {
+    console.log('audio', audio);
+    audio.muted = false; // Mute initially
+    audio.loop = true;
+    audio.autoplay = true;
     audio.volume = 0.5;
-    audio.play().catch((err) => console.log("Audio play failed:", err));
+    audio.play();
+    // After a short delay (e.g., 1 second) unmute the audio
+    // setTimeout(() => {
+    //   audio.muted = false;
+    // }, 1000);
   }
 }
 let emojiInterval;
@@ -207,6 +217,7 @@ document.getElementById("startBtn").addEventListener("click", async () => {
   document.getElementById("startBtn").style.display = "none";
   document.getElementById("wishesContainer").classList.remove("hidden");
   const bgAudio = document.getElementById("bgMusic");
+  playAudio("bgMusic");
   bgAudio.muted = isMuted;
   try {
     const playPromise = bgAudio.play();
