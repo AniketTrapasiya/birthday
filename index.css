@@ -32,6 +32,34 @@ body.sad-theme {
   animation: slowTwinkle 4s infinite;
 }
 
+body.love-theme {
+  background: linear-gradient(45deg, #1e0022, #3a003afd);
+  /* background-image: radial-gradient(farthest-side at 85% 100%,
+      #ff69b4 99%,
+      transparent 100%); */
+
+}
+
+.love-theme .wishes {
+  color: #ffffff;
+}
+
+.love-theme .star {
+  animation: slowTwinkle 4s infinite;
+}
+
+@keyframes deepLove {
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
 @keyframes slowTwinkle {
 
   0%,

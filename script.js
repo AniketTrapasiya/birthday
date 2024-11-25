@@ -71,6 +71,33 @@ function createEmoji() {
   animation.onfinish = () => emoji.remove();
 }
 
+function loveEmoji() {
+  const emojis = ["💖", "💗", "🥰", "💝", "💞", "🥰", "💖", "💗", "🥰", "💝", "💞", "🥰"]
+  const emoji = document.createElement("div");
+  emoji.className = "emoji";
+  emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+  emoji.style.left = Math.random() * window.innerWidth + "px";
+  emoji.style.top = "-50px";
+  emoji.style.width = "50px";
+  emoji.style.height = "50px";
+  document.body.appendChild(emoji);
+  const animation = emoji.animate(
+    [
+      {
+        transform: "translateY(0) rotate(0deg)"
+      },
+      {
+        transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random() * 360
+          }deg)`
+      }
+    ],
+    {
+      duration: 3000,
+      easing: "linear"
+    }
+  );
+  animation.onfinish = () => emoji.remove();
+}
 function stopAllMusic() {
   const audios = ["bgMusic", "gfMusic", "bestFriendMusic"];
   audios.forEach((id) => {
@@ -120,8 +147,11 @@ async function makeChoice(choice) {
   const wishesElement = document.getElementById("wishes");
   document.getElementById("choices").style.display = "none";
   stopAllMusic();
+
+  document.body.classList.remove("love-theme");
   if (choice === "gf") {
     document.body.classList.remove("sad-theme");
+    document.body.classList.add("love-theme");
     const gfAudio = document.getElementById("gfMusic");
     gfAudio.muted = isMuted;
     try {
@@ -134,6 +164,7 @@ async function makeChoice(choice) {
     } catch (err) {
       console.log("Audio play failed:", err);
     }
+    emojiInterval = setInterval(loveEmoji, 200);
     for (let message of gfChat) {
       await typeWriter(message);
     }
@@ -161,12 +192,11 @@ async function makeChoice(choice) {
     } catch (err) {
       console.log("Audio play failed:", err);
     }
-    emojiInterval = setInterval(createEmoji, 300);
     for (let message of bestFriendMessages) {
       await typeWriter(message);
     }
     document.getElementById("choices").innerHTML = `
-                    <button class="choice-btn" onclick="makeChoice('bestfriend')">Best Friend</button>
+                    <button class="choice-btn" onclick="makeChoice('gf')">Girl Friend</button>
                 `;
     document.getElementById("choices").style.display = "block";
     document.querySelector(".choice-btn").style.opacity = 1;
