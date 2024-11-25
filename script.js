@@ -137,11 +137,16 @@ async function makeChoice(choice) {
     for (let message of gfChat) {
       await typeWriter(message);
     }
-    document.getElementById("choices").innerHTML = `
-                    <button class="choice-btn" onclick="makeChoice('bestfriend')">Best Friend</button>
-                `;
-    document.getElementById("choices").style.display = "block";
-    document.querySelector(".choice-btn").style.opacity = 1;
+    setTimeout(() => {
+      setTimeout(() => {
+        window.open(
+          "https://t.me/@art260301",
+          "_blank"
+        );
+        wishesElement.innerHTML =
+          "Check your Telegram, ratuku! 📱✨<br>💖I am there💖";
+      }, 1000);
+    }, 2000);
   } else {
     document.body.classList.add("sad-theme");
     const bestFriendAudio = document.getElementById("bestFriendMusic");
@@ -160,16 +165,12 @@ async function makeChoice(choice) {
     for (let message of bestFriendMessages) {
       await typeWriter(message);
     }
-    setTimeout(() => {
-      setTimeout(() => {
-        window.open(
-          "https://t.me/@art260301",
-          "_blank"
-        );
-        wishesElement.innerHTML =
-          "Check your Telegram, ratuku! 📱✨<br>💖I am there💖";
-      }, 1000);
-    }, 2000);
+    document.getElementById("choices").innerHTML = `
+                    <button class="choice-btn" onclick="makeChoice('bestfriend')">Best Friend</button>
+                `;
+    document.getElementById("choices").style.display = "block";
+    document.querySelector(".choice-btn").style.opacity = 1;
+
   }
 }
 document.getElementById("startBtn").addEventListener("click", async () => {
