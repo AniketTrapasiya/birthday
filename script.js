@@ -1,32 +1,32 @@
 const wishes = [
-  "Bayiiii... ",
-  "Pada hari yang sangat istimewa ini... ",
-  "Saya ingin memberitahukan sesuatu dari hati saya...",
-  "Anda membawa begitu banyak kebahagiaan untuk setiap orang di sekitar Anda! ",
-  "Senyuman Anda mencerahkan bahkan hari-hari yang paling gelap! ",
-  "Kesabaran Anda membuat dunia ini menjadi tempat yang lebih baik! ",
-  "Selamat Ulang Tahun! ",
+  "Bayiiii... 🎉",
+  "Pada hari yang sangat istimewa ini... 🎂",
+  "Saya ingin memberitahukan sesuatu dari hati saya... ❤️",
+  "Anda membawa begitu banyak kebahagiaan untuk setiap orang di sekitar Anda! 😊",
+  "Senyuman Anda mencerahkan bahkan hari-hari yang paling gelap! ☀️",
+  "Kesabaran Anda membuat dunia ini menjadi tempat yang lebih baik! 🌎",
+  "Selamat Ulang Tahun! 🎉",
   "Namun sebelum kita lanjutkan...",
-  "Saya punya pertanyaan spesial untuk Anda... "
+  "Saya punya pertanyaan spesial untuk Anda... 🤔"
 ];
 const gfChat = [
-  "Hafsah, cinta saya untuk Anda tidak terbatas...",
-  "Di mata Anda, saya melihat masa depan saya, saya melihat selamanya...",
-  "Setiap momen dengan Anda adalah hadiah, setiap ciuman adalah mimpi yang terwujud...",
-  "Saya cinta bagaimana kita dapat menjembatani jarak di antara kita hanya dengan sekali pandang, sekali sentuhan, sekali janji yang bisik...",
-  "Saya cinta bagaimana kita dapat membuat satu sama lain merasa dilihat dan didengar, bahkan ketika kita berada di tempat yang sangat jauh...",
-  "Saya cinta Anda lebih dari kata-kata yang dapat saya ucapkan, lebih dari puisi yang dapat saya tuliskan...",
-  "Anda adalah rumah saya, tempat saya berlindung, saya mencintai Anda selamanya...",
+  "Hafsah, cinta saya untuk Anda tidak terbatas... ❤️",
+  "Di mata Anda, saya melihat masa depan saya, saya melihat selamanya... 👀",
+  "Setiap momen dengan Anda adalah hadiah, setiap ciuman adalah mimpi yang terwujud... 💋",
+  "Saya cinta bagaimana kita dapat menjembatani jarak di antara kita hanya dengan sekali pandang, sekali sentuhan, sekali janji yang bisik... 💕",
+  "Saya cinta bagaimana kita dapat membuat satu sama lain merasa dilihat dan didengar, bahkan ketika kita berada di tempat yang sangat jauh... 👂",
+  "Saya cinta Anda lebih dari kata-kata yang dapat saya ucapkan, lebih dari puisi yang dapat saya tuliskan... 📝",
+  "Anda adalah rumah saya, tempat saya berlindung, saya mencintai Anda selamanya... 🏠",
 ];
 const bestFriendMessages = [
-  "Moonlight, cinta saya, jantung saya berdetak untuk Anda saja...",
-  "Di pelukan Anda, saya menemukan ketenangan saya, saya menemukan keselamatan saya...",
-  "Setiap momen tanpa Anda adalah seumur hidup, setiap detik adalah keabadian...",
-  "Saya cinta bagaimana kita dapat melewati waktu dan ruang, bagaimana kita dapat bersama-sama walaupun kita berada di tempat yang sangat jauh...",
-  "Saya cinta bagaimana kita dapat membuat satu sama lain merasa utuh, bahkan ketika kita hancur berkeping-keping...",
-  "Saya cinta Anda lebih dari hidup saya sendiri, lebih dari napas saya sendiri...",
-  "Anda adalah segalanya untuk saya, saya mencintai Anda selamanya...",
-  "Maukah Anda menjadi pacar saya, pasangan saya, teman saya seumur hidup?",
+  "Moonlight, cinta saya, jantung saya berdetak untuk Anda saja... ❤️",
+  "Di pelukan Anda, saya menemukan ketenangan saya, saya menemukan keselamatan saya... 🤗",
+  "Setiap momen tanpa Anda adalah seumur hidup, setiap detik adalah keabadian... ⏰",
+  "Saya cinta bagaimana kita dapat melewati waktu dan ruang, bagaimana kita dapat bersama-sama walaupun kita berada di tempat yang sangat jauh... 🕰️",
+  "Saya cinta bagaimana kita dapat membuat satu sama lain merasa utuh, bahkan ketika kita hancur berkeping-keping... 🤝",
+  "Saya cinta Anda lebih dari hidup saya sendiri, lebih dari napas saya sendiri... 👅",
+  "Anda adalah segalanya untuk saya, saya mencintai Anda selamanya... 💕",
+  "Maukah Anda menjadi pacar saya, pasangan saya, teman saya seumur hidup? 💏",
 ];
 
 function createStars() {
